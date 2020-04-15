@@ -1,0 +1,31 @@
+/*
+ * 	startup.c
+ *
+ */
+__attribute__((naked)) __attribute__((section (".start_section")) )
+void startup ( void )
+{
+__asm__ volatile(" LDR R0,=0x2001C000\n");		/* set stack */
+__asm__ volatile(" MOV SP,R0\n");
+__asm__ volatile(" BL main\n");					/* call main */
+__asm__ volatile(".L1: B .L1\n");				/* never return */
+}
+
+void app_init(void)
+{
+    * ((unsigned long *) 0x40020C00) = 0x55555555;
+}
+
+void main(void)
+{
+    unsigned short c1;
+    unsigned short c2;
+    app_init();
+    while(1) {
+        c1 = *((unsigned char *) 0x40021010);
+        c2 = *((unsigned char *) 0x40021011);
+        * ((unsigned short*) 0x40020C14) = c1<<c2;
+
+    }
+}
+

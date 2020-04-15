@@ -1,0 +1,12 @@
+start:
+	LDR	R0,=0x55555555
+	LDR	R1,=0x40020C00 @ Konfig port D
+	STR	R0,[R1]
+
+	LDR	R1,=0x40020C14 @ Utport GPIO D
+	LDR	R2,=0x40021010 @ Inport GPIO E
+
+main:
+	LDR	R0,[R2]
+	STR	R0,[R1]
+	B	main

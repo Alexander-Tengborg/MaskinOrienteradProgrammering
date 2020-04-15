@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="MaskinOrienteradProgrammering" Database="" Version="10.0.0">
+  <Project Name="basic_io" Path="basic_io/basic_io.project" Active="Yes"/>
+  <Project Name="lab2" Path="lab2/lab2.project"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="basic_io" ConfigName="Debug"/>
+      <Project Name="lab2" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="basic_io" ConfigName="Release"/>
+      <Project Name="lab2" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
