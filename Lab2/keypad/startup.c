@@ -3,7 +3,7 @@
  *
  */
  
- /* Defintioner*/
+/* Defintioner*/
  
 #define     GPIO_D              0x40020C00
 #define     GPIO_D_MODER        ((volatile unsigned int *) GPIO_D)
@@ -74,7 +74,7 @@ unsigned char getColumn(void)
     return 0;
 }
  
- /* 
+/* 
  * Används för att returna den knappen som är nertryckt
  */
 unsigned char keyb(void) {

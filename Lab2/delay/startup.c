@@ -57,7 +57,7 @@ void delay_micro(unsigned int us)
 	
 	while(us > 0)
 	{
-		delay_250ns();
+        delay_250ns();
 		delay_250ns();
 		delay_250ns();
 		delay_250ns();

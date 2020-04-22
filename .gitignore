@@ -5,3 +5,11 @@
 *.s19
 *.asm~~~
 *.o
+*.dass
+*.session
+*.tags-wal
+*.tags-shm
+*.tags
+*.tags-wal
+*.tags
+*.tags-shm
