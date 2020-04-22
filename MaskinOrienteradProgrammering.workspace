@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="MaskinOrienteradProgrammering" Database="" Version="10.0.0">
-  <Project Name="basic_io" Path="basic_io/basic_io.project" Active="Yes"/>
-  <Project Name="lab2" Path="lab2/lab2.project"/>
+  <Project Name="basic_io" Path="basic_io/basic_io.project" Active="No"/>
+  <Project Name="lab2" Path="lab2/lab2.project" Active="Yes"/>
+  <Project Name="keypad" Path="keypad/keypad.project"/>
+  <Project Name="delay" Path="delay/delay.project"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
       <Project Name="basic_io" ConfigName="Debug"/>
       <Project Name="lab2" ConfigName="Debug"/>
+      <Project Name="keypad" ConfigName="Debug"/>
+      <Project Name="delay" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
       <Project Name="basic_io" ConfigName="Release"/>
       <Project Name="lab2" ConfigName="Release"/>
+      <Project Name="keypad" ConfigName="Release"/>
+      <Project Name="delay" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
