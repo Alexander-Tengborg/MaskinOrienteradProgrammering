@@ -25,7 +25,7 @@ __asm__ volatile(".L1: B .L1\n");               /* never return */
 
 /*
  * Konfigurerar port E så att bitar 0-7 kan användas som en utport
- */
+ */sa
 void init_app(void)
 {
     *GPIO_E_MODER &= 0xFFFF0000;

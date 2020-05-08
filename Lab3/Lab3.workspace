@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="Lab3" Database="" Version="10.0.0">
+  <Project Name="graphicdisplay" Path="graphicdisplay/graphicdisplay.project" Active="No"/>
+  <Project Name="linetest" Path="linetest/linetest.project" Active="No"/>
+  <Project Name="rectest" Path="rectest/rectest.project" Active="No"/>
+  <Project Name="polytest" Path="polytest/polytest.project" Active="No"/>
+  <Project Name="movepong" Path="movepong/movepong.project" Active="No"/>
+  <Project Name="spel" Path="spel/spel.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="graphicdisplay" ConfigName="Debug"/>
+      <Project Name="linetest" ConfigName="Debug"/>
+      <Project Name="rectest" ConfigName="Debug"/>
+      <Project Name="polytest" ConfigName="Debug"/>
+      <Project Name="movepong" ConfigName="Debug"/>
+      <Project Name="spel" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="graphicdisplay" ConfigName="Release"/>
+      <Project Name="linetest" ConfigName="Release"/>
+      <Project Name="rectest" ConfigName="Release"/>
+      <Project Name="polytest" ConfigName="Release"/>
+      <Project Name="movepong" ConfigName="Release"/>
+      <Project Name="spel" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

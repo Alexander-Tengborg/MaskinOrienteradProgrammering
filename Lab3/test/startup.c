@@ -43,7 +43,7 @@ void app_init(void)
 {
     // Keypad setup
     *GPIO_D_MODER &= 0x0000FFFF;
-    *GPIO_D_MODER |= 0x55000000;
+    *GPIO_D_MODER = 0x55000000;
     *GPIO_D_OTYPER_HIGH = 0x00;
     *GPIO_D_PUPDR_HIGH = 0x00AA;
  
@@ -92,15 +92,11 @@ unsigned char keyb(void) {
     return 0xFF;
 }
 
-/* 
+ /* 
  * Ändrar värde på 7-segment displayen så att den visar den nertryckta knappen
  */
 void out7seg(unsigned char c)
 {
-    if(c > 16) {
-        *GPIO_D_ODR_LOW = 0;
-        return;
-    }
     *GPIO_D_ODR_LOW = segs[c];
 }
 

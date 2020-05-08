@@ -3,20 +3,20 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=keypad
+ProjectName            :=graphicdisplay
 ConfigurationName      :=Debug
-WorkspacePath          :=D:/KURSER/MaskinOrienteradProgrammering/Lab2
-ProjectPath            :=D:/KURSER/MaskinOrienteradProgrammering/Lab2/keypad
+WorkspacePath          :=C:/Users/usr/Documents/Lab3
+ProjectPath            :=C:/Users/usr/Documents/Lab3/graphicdisplay
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=Landa
-Date                   :=04/05/2020
+User                   :=Alexander
+Date                   :=28/04/2020
 CodeLitePath           :=C:/cseapp/CodeLite
-LinkerName             :="C:/Program Files (x86)/GNU Tools Arm Embedded/9 2019-q4-major/bin/arm-none-eabi-g++.exe"
-SharedObjectLinkerName :="C:/Program Files (x86)/GNU Tools Arm Embedded/9 2019-q4-major/bin/arm-none-eabi-g++.exe" -shared -fPIC
+LinkerName             :=$(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-g++.exe
+SharedObjectLinkerName :=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi-g++.exe -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
 PreprocessSuffix       :=.i
@@ -32,11 +32,11 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="keypad.txt"
+ObjectsFileList        :="graphicdisplay.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
-RcCompilerName         :=windres
+RcCompilerName         :=
 LinkOptions            :=  -T$(ProjectPath)/md407-ram.x -L$(ARM_V6LIB) -L$(ARM_GCC_V6LIB) -nostartfiles
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
@@ -49,13 +49,13 @@ LibPath                := $(LibraryPathSwitch).
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
-AR       := "C:/Program Files (x86)/GNU Tools Arm Embedded/9 2019-q4-major/bin/arm-none-eabi-ar.exe" rcu
-CXX      := "C:/Program Files (x86)/GNU Tools Arm Embedded/9 2019-q4-major/bin/arm-none-eabi-g++.exe"
-CC       := "C:/Program Files (x86)/GNU Tools Arm Embedded/9 2019-q4-major/bin/arm-none-eabi-gcc.exe"
+AR       := $(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-ar.exe rcu
+CXX      := $(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-g++.exe
+CC       := $(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-gcc.exe
 CXXFLAGS :=  -g -O0 -W $(Preprocessors)
 CFLAGS   :=  -g -O0 -w -mthumb -march=armv6-m  -mfloat-abi=soft -std=c99 $(Preprocessors)
 ASFLAGS  := 
-AS       := "C:/Program Files (x86)/GNU Tools Arm Embedded/9 2019-q4-major/bin/arm-none-eabi-as.exe"
+AS       := $(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-as.exe
 
 
 ##
@@ -88,8 +88,8 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 
 PostBuild:
 	@echo Executing Post Build commands ...
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/keypad.elf ./Debug/keypad.s19
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/keypad.elf > ./Debug/keypad.dass
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/graphicdisplay.elf ./Debug/graphicdisplay.s19
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/graphicdisplay.elf > ./Debug/graphicdisplay.dass
 	@echo Done
 
 MakeIntermediateDirs:
@@ -106,7 +106,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/startup.c$(ObjectSuffix): startup.c $(IntermediateDirectory)/startup.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "D:/KURSER/MaskinOrienteradProgrammering/Lab2/keypad/startup.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/usr/Documents/Lab3/graphicdisplay/startup.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/startup.c$(DependSuffix): startup.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/startup.c$(ObjectSuffix) -MF$(IntermediateDirectory)/startup.c$(DependSuffix) -MM startup.c
 
