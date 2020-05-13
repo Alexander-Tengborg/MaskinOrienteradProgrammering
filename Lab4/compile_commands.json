@@ -1,0 +1,13 @@
+[{
+  "file": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab4\\flipflop_irq_ack\\startup.c",
+  "directory": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab4\\flipflop_irq_ack",
+  "command": "clang  -c C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab4\\flipflop_irq_ack\\startup.c -o C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab4\\flipflop_irq_ack\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab4\\systick_irq\\startup.c",
+  "directory": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab4\\systick_irq",
+  "command": "clang  -c C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab4\\systick_irq\\startup.c -o C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab4\\systick_irq\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
+  "file": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab4\\flipflop_irq\\startup.c",
+  "directory": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab4\\flipflop_irq",
+  "command": "clang  -c C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab4\\flipflop_irq\\startup.c -o C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab4\\flipflop_irq\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }]
