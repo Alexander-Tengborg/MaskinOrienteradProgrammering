@@ -118,7 +118,7 @@ int main(void)
     init_app();
     graphic_initalize();
     graphic_clear_screen();
-    //victim->set_speed(victim, 4, 1);
+    victim->set_speed(victim, 4, 1);
 
     while( 1 )
     {
@@ -277,7 +277,6 @@ unsigned char keyb(void)
 void draw_object(POBJECT object)
 {
 	char numpoints = object->geo->numpoints;
-	//POINT points[] = object->geo->px;
 	
 	for(char c = 0; c < numpoints; c++)
 	{

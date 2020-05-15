@@ -80,9 +80,7 @@ void main(void)
     {
         if(systick_flag)
             break;
-        /* Här placeras kod som kan utföras under väntetiden */
     }
-    /* Här finns den kod som "väntar" på time-out */
     *GPIO_D_ODR_LOW = 0;
 }
 

@@ -61,7 +61,7 @@ void main(void)
 		for( int i = 0; i< sizeof(lines)/sizeof(LINE); i++)
 		{
 			draw_line(lines[i]);
-			delay_milli(500);
+			delay_milli(50);
 		}
 		graphic_clear_screen();
 	}

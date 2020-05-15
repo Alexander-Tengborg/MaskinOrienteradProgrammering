@@ -3,10 +3,10 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=linetest
+ProjectName            :=flipflop_irq_vectored
 ConfigurationName      :=Debug
-WorkspacePath          :=C:/Users/usr/Documents/GitHub/MaskinOrienteradProgrammering/Lab3
-ProjectPath            :=C:/Users/usr/Documents/GitHub/MaskinOrienteradProgrammering/Lab3/linetest
+WorkspacePath          :=C:/Users/usr/Documents/GitHub/MaskinOrienteradProgrammering/Lab4
+ProjectPath            :=C:/Users/usr/Documents/GitHub/MaskinOrienteradProgrammering/Lab4/flipflop_irq_vectored
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
@@ -32,7 +32,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="linetest.txt"
+ObjectsFileList        :="flipflop_irq_vectored.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=makedir
 RcCmpOptions           := 
@@ -88,8 +88,8 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 
 PostBuild:
 	@echo Executing Post Build commands ...
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/linetest.elf ./Debug/linetest.s19
-	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/linetest.elf > ./Debug/linetest.dass
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objcopy -S -O srec  ./Debug/flipflop_irq_vectored.elf ./Debug/flipflop_irq_vectored.s19
+	C:\cseapp\CodeLite/tools/gcc-arm/bin/arm-none-eabi-objdump -D -S ./Debug/flipflop_irq_vectored.elf > ./Debug/flipflop_irq_vectored.dass
 	@echo Done
 
 MakeIntermediateDirs:
@@ -106,7 +106,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/startup.c$(ObjectSuffix): startup.c $(IntermediateDirectory)/startup.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/usr/Documents/GitHub/MaskinOrienteradProgrammering/Lab3/linetest/startup.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "C:/Users/usr/Documents/GitHub/MaskinOrienteradProgrammering/Lab4/flipflop_irq_vectored/startup.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/startup.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/startup.c$(DependSuffix): startup.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/startup.c$(ObjectSuffix) -MF$(IntermediateDirectory)/startup.c$(DependSuffix) -MM startup.c
 
