@@ -1,1 +1,8 @@
--IC:\Users\usr\Documents\GitHub\MaskinOrienteradProgrammering\Lab3\polytest
+-Ic:\program
+-ID:\KURSER\MaskinOrienteradProgrammering\Lab3\polytest
+-I"c:\program files (x86)\gnu tools arm embedded\9 2019-q4-major\arm-none-eabi\include\c++\9.2.1"
+-I"c:\program files (x86)\gnu tools arm embedded\9 2019-q4-major\arm-none-eabi\include\c++\9.2.1\arm-none-eabi"
+-I"c:\program files (x86)\gnu tools arm embedded\9 2019-q4-major\arm-none-eabi\include\c++\9.2.1\backward"
+-I"c:\program files (x86)\gnu tools arm embedded\9 2019-q4-major\lib\gcc\arm-none-eabi\9.2.1\include"
+-I"c:\program files (x86)\gnu tools arm embedded\9 2019-q4-major\lib\gcc\arm-none-eabi\9.2.1\include-fixed"
+-I"c:\program files (x86)\gnu tools arm embedded\9 2019-q4-major\arm-none-eabi\include"
