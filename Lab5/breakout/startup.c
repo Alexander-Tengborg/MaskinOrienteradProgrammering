@@ -150,7 +150,7 @@ int main(void)
     init_app();
     graphic_initalize();
     graphic_clear_screen();
-    ball->set_speed(ball, 1, -1);
+    ball->set_speed(ball, 2, -2);
 
     OBJECT targets[TARGET_ROWS*TARGET_COLUMNS];
 
