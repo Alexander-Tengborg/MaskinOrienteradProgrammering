@@ -3,6 +3,8 @@
  *
  */
  
+ #include <stdio.h>
+ 
 #define     GPIO_D              0x40020C00
 #define     GPIO_D_MODER        ((volatile unsigned int *) GPIO_D)
 #define     GPIO_D_OTYPER_HIGH  ((volatile unsigned char *) GPIO_D+0x05)

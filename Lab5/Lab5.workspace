@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="Lab5" Database="" Version="10.0.0">
   <Project Name="breakout" Path="breakout/breakout.project" Active="No"/>
-  <Project Name="libMD407" Path="libMD407/libMD407.project" Active="Yes"/>
+  <Project Name="libMD407" Path="libMD407/libMD407.project" Active="No"/>
+  <Project Name="usart_test" Path="usart_test/usart_test.project" Active="No"/>
+  <Project Name="lib_test" Path="lib_test/lib_test.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
       <Project Name="breakout" ConfigName="Debug"/>
       <Project Name="3bolltest" ConfigName="Debug"/>
       <Project Name="libMD407" ConfigName="Debug"/>
+      <Project Name="usart_test" ConfigName="Debug"/>
+      <Project Name="lib_test" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
       <Project Name="breakout" ConfigName="Release"/>
       <Project Name="3bolltest" ConfigName="Release"/>
       <Project Name="libMD407" ConfigName="Release"/>
+      <Project Name="usart_test" ConfigName="Release"/>
+      <Project Name="lib_test" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

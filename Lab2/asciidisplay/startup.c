@@ -20,7 +20,7 @@
 #define 	B_RW 			2 /* 0=Write, 1=Read */ 
 #define 	B_RS 			1 /* 0=Control, 1=Data */ 
  
-#define 	SIMULATOR 
+#define     SIMULATOR 
 
 #define 	STK_CTRL 		((volatile unsigned int *) 0xE000E010)
 #define 	STK_LOAD 		((volatile unsigned int *) 0xE000E014)
@@ -235,7 +235,7 @@ void main(void)
 	ascii_gotoxy(1,1);
 	s = test1;
 	while(*s)
-		ascii_write_char(*s++);
+		//ascii_write_char(*s++);
 	ascii_gotoxy(1,2);
 	s = test2;
 	while(*s)

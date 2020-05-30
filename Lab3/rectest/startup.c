@@ -54,17 +54,16 @@ RECT rectangles[]={
 void main(void)
 {
 	graphic_initalize();
-	graphic_clear_screen();
+	//graphic_clear_screen();
   
 	while( 1 )
 	{
-	   for( int i = 0; i< sizeof(rectangles)/sizeof( RECT ); i++)
-	   {
-		 draw_rect( rectangles[i] );
-		 delay_milli( 500 );
-
-	   }
-		 graphic_clear_screen();
+        for( int i = 0; i< sizeof(rectangles)/sizeof( RECT ); i++)
+        {
+            draw_rect( rectangles[i] );
+            delay_milli( 500 );
+        }
+        graphic_clear_screen();
 	}
 } 
 

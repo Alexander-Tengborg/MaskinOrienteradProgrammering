@@ -23,7 +23,10 @@ __asm__ volatile(".L1: B .L1\n");               /* never return */
 2000000c:	2001c000 	andcs	ip, r1, r0
 
 20000010 <init_app>:
- 
+
+/*
+ * Konfigurerar port E så att bitar 0-7 kan användas som en utport
+ */
 void init_app(void)
 {
 20000010:	b580      	push	{r7, lr}
@@ -52,28 +55,30 @@ void init_app(void)
 
 2000003c <delay_250ns>:
  
+/*
+ * Funktion som gör så att simulatorn "sover" i 250 nanosekunder
+ */
 void delay_250ns(void)
 {
 2000003c:	b580      	push	{r7, lr}
 2000003e:	af00      	add	r7, sp, #0
-    /* SystemCoreClock = 168000000 */
-    *STK_CTRL = 0;
+	*STK_CTRL = 0;
 20000040:	4b0c      	ldr	r3, [pc, #48]	; (20000074 <delay_250ns+0x38>)
 20000042:	2200      	movs	r2, #0
 20000044:	601a      	str	r2, [r3, #0]
-    *STK_LOAD = ( (168/4) -1 );
+	*STK_LOAD = ( (168/4) -1 );
 20000046:	4b0c      	ldr	r3, [pc, #48]	; (20000078 <delay_250ns+0x3c>)
 20000048:	2229      	movs	r2, #41	; 0x29
 2000004a:	601a      	str	r2, [r3, #0]
-    *STK_VAL = 0;
+	*STK_VAL = 0;
 2000004c:	4b0b      	ldr	r3, [pc, #44]	; (2000007c <delay_250ns+0x40>)
 2000004e:	2200      	movs	r2, #0
 20000050:	601a      	str	r2, [r3, #0]
-    *STK_CTRL = 5;
+	*STK_CTRL = 5;
 20000052:	4b08      	ldr	r3, [pc, #32]	; (20000074 <delay_250ns+0x38>)
 20000054:	2205      	movs	r2, #5
 20000056:	601a      	str	r2, [r3, #0]
-    while( (*STK_CTRL & 0x10000 )== 0 );
+	while( (*STK_CTRL & 0x10000 )== 0 );
 20000058:	46c0      	nop			; (mov r8, r8)
 2000005a:	4b06      	ldr	r3, [pc, #24]	; (20000074 <delay_250ns+0x38>)
 2000005c:	681a      	ldr	r2, [r3, #0]
@@ -81,7 +86,7 @@ void delay_250ns(void)
 20000060:	025b      	lsls	r3, r3, #9
 20000062:	4013      	ands	r3, r2
 20000064:	d0f9      	beq.n	2000005a <delay_250ns+0x1e>
-    *STK_CTRL = 0;
+	*STK_CTRL = 0;
 20000066:	4b03      	ldr	r3, [pc, #12]	; (20000074 <delay_250ns+0x38>)
 20000068:	2200      	movs	r2, #0
 2000006a:	601a      	str	r2, [r3, #0]
@@ -95,15 +100,18 @@ void delay_250ns(void)
 2000007c:	e000e018 	and	lr, r0, r8, lsl r0
 
 20000080 <delay_micro>:
- 
+
+/*
+ * Funktion som gör så att simulatorn "sover" i us antal mikrosekunder
+ */
 void delay_micro(unsigned int us)
 {
 20000080:	b580      	push	{r7, lr}
 20000082:	b082      	sub	sp, #8
 20000084:	af00      	add	r7, sp, #0
 20000086:	6078      	str	r0, [r7, #4]
-    #ifdef SIMULATOR
-        us = us / 2000;
+	#ifdef SIMULATOR
+		us = us / 2000;
 20000088:	687b      	ldr	r3, [r7, #4]
 2000008a:	22fa      	movs	r2, #250	; 0xfa
 2000008c:	00d1      	lsls	r1, r2, #3
@@ -111,32 +119,32 @@ void delay_micro(unsigned int us)
 20000090:	f000 f842 	bl	20000118 <__udivsi3>
 20000094:	0003      	movs	r3, r0
 20000096:	607b      	str	r3, [r7, #4]
-        us++;
+		us++;
 20000098:	687b      	ldr	r3, [r7, #4]
 2000009a:	3301      	adds	r3, #1
 2000009c:	607b      	str	r3, [r7, #4]
-    #endif
-   
-    while(us > 0)
+	#endif
+	
+	while(us > 0)
 2000009e:	e00a      	b.n	200000b6 <delay_micro+0x36>
-    {
+	{
         delay_250ns();
 200000a0:	f7ff ffcc 	bl	2000003c <delay_250ns>
-        delay_250ns();
+		delay_250ns();
 200000a4:	f7ff ffca 	bl	2000003c <delay_250ns>
-        delay_250ns();
+		delay_250ns();
 200000a8:	f7ff ffc8 	bl	2000003c <delay_250ns>
-        delay_250ns();
+		delay_250ns();
 200000ac:	f7ff ffc6 	bl	2000003c <delay_250ns>
-        us--;
+		us--;
 200000b0:	687b      	ldr	r3, [r7, #4]
 200000b2:	3b01      	subs	r3, #1
 200000b4:	607b      	str	r3, [r7, #4]
-    while(us > 0)
+	while(us > 0)
 200000b6:	687b      	ldr	r3, [r7, #4]
 200000b8:	2b00      	cmp	r3, #0
 200000ba:	d1f1      	bne.n	200000a0 <delay_micro+0x20>
-    }
+	}
 }
 200000bc:	46c0      	nop			; (mov r8, r8)
 200000be:	46c0      	nop			; (mov r8, r8)
@@ -145,14 +153,17 @@ void delay_micro(unsigned int us)
 200000c4:	bd80      	pop	{r7, pc}
 
 200000c6 <delay_milli>:
- 
+
+/*
+ * Funktion som gör så att simulatorn "sover" i ms antal millisekunder
+ */
 void delay_milli(unsigned int ms)
 {
 200000c6:	b580      	push	{r7, lr}
 200000c8:	b082      	sub	sp, #8
 200000ca:	af00      	add	r7, sp, #0
 200000cc:	6078      	str	r0, [r7, #4]
-    delay_micro(ms*1000);
+	delay_micro(ms*1000);
 200000ce:	687a      	ldr	r2, [r7, #4]
 200000d0:	0013      	movs	r3, r2
 200000d2:	015b      	lsls	r3, r3, #5
@@ -169,7 +180,10 @@ void delay_milli(unsigned int ms)
 200000e8:	bd80      	pop	{r7, pc}
 
 200000ea <main>:
- 
+
+/* 
+ * Används för att returna den knappen som är nertryckt
+ */
 void main(void)
 {
 200000ea:	b580      	push	{r7, lr}
@@ -356,37 +370,37 @@ Disassembly of section .debug_info:
   14:	00009700 	andeq	r9, r0, r0, lsl #14
 	...
   24:	00920200 	addseq	r0, r2, r0, lsl #4
-  28:	41010000 	mrsmi	r0, (UNDEF: 1)
+  28:	4f010000 	svcmi	0x00010000
   2c:	0000ea06 	andeq	lr, r0, r6, lsl #20
   30:	00002e20 	andeq	r2, r0, r0, lsr #28
   34:	039c0100 	orrseq	r0, ip, #0, 2
   38:	00000113 	andeq	r0, r0, r3, lsl r1
-  3c:	c6063c01 	strgt	r3, [r6], -r1, lsl #24
+  3c:	c6064701 	strgt	r4, [r6], -r1, lsl #14
   40:	24200000 	strtcs	r0, [r0], #-0
   44:	01000000 	mrseq	r0, (UNDEF: 0)
   48:	00005c9c 	muleq	r0, ip, ip
   4c:	736d0400 	cmnvc	sp, #0, 8
-  50:	1f3c0100 	svcne	0x003c0100
+  50:	1f470100 	svcne	0x00470100
   54:	0000005c 	andeq	r0, r0, ip, asr r0
   58:	00749102 	rsbseq	r9, r4, r2, lsl #2
   5c:	7c070405 	cfstrsvc	mvf0, [r7], {5}
   60:	03000000 	movweq	r0, #0
   64:	000000ca 	andeq	r0, r0, sl, asr #1
-  68:	80062b01 	andhi	r2, r6, r1, lsl #22
+  68:	80063301 	andhi	r3, r6, r1, lsl #6
   6c:	46200000 	strtmi	r0, [r0], -r0
   70:	01000000 	mrseq	r0, (UNDEF: 0)
   74:	0000889c 	muleq	r0, ip, r8
   78:	73750400 	cmnvc	r5, #0, 8
-  7c:	1f2b0100 	svcne	0x002b0100
+  7c:	1f330100 	svcne	0x00330100
   80:	0000005c 	andeq	r0, r0, ip, asr r0
   84:	00749102 	rsbseq	r9, r4, r2, lsl #2
   88:	00011f06 	andeq	r1, r1, r6, lsl #30
-  8c:	06200100 	strteq	r0, [r0], -r0, lsl #2
+  8c:	06260100 	strteq	r0, [r6], -r0, lsl #2
   90:	2000003c 	andcs	r0, r0, ip, lsr r0
   94:	00000044 	andeq	r0, r0, r4, asr #32
   98:	89069c01 	stmdbhi	r6, {r0, sl, fp, ip, pc}
   9c:	01000000 	mrseq	r0, (UNDEF: 0)
-  a0:	0010061a 	andseq	r0, r0, sl, lsl r6
+  a0:	0010061d 	andseq	r0, r0, sp, lsl r6
   a4:	002c2000 	eoreq	r2, ip, r0
   a8:	9c010000 	stcls	0, cr0, [r1], {-0}
   ac:	00012b06 	andeq	r2, r1, r6, lsl #22
@@ -457,7 +471,7 @@ Disassembly of section .debug_ranges:
 Disassembly of section .debug_line:
 
 00000000 <.debug_line>:
-   0:	00000116 	andeq	r0, r0, r6, lsl r1
+   0:	00000118 	andeq	r0, r0, r8, lsl r1
    4:	00530003 	subseq	r0, r3, r3
    8:	01020000 	mrseq	r0, (UNDEF: 2)
    c:	000d0efb 	strdeq	r0, [sp], -fp
@@ -488,47 +502,46 @@ Disassembly of section .debug_line:
   70:	05010100 	streq	r0, [r1, #-256]	; 0xffffff00
   74:	02050001 	andeq	r0, r5, #1
   78:	20000010 	andcs	r0, r0, r0, lsl r0
-  7c:	05011a03 	streq	r1, [r1, #-2563]	; 0xfffff5fd
+  7c:	05011d03 	streq	r1, [r1, #-3331]	; 0xfffff2fd
   80:	05672f13 	strbeq	r2, [r7, #-3859]!	; 0xfffff0ed
-  84:	05856701 	streq	r6, [r5, #1793]	; 0x701
-  88:	0f053005 	svceq	0x00053005
-  8c:	2f050520 	svccs	0x00050520
-  90:	05200f05 	streq	r0, [r0, #-3845]!	; 0xfffff0fb
-  94:	0e052f05 	cdpeq	15, 0, cr2, cr5, cr5, {0}
-  98:	2f050520 	svccs	0x00050520
-  9c:	05200f05 	streq	r0, [r0, #-3845]!	; 0xfffff0fb
-  a0:	0d052f0a 	stceq	15, cr2, [r5, #-40]	; 0xffffffd8
+  84:	05886701 	streq	r6, [r8, #1793]	; 0x701
+  88:	0c052f02 	stceq	15, cr2, [r5], {2}
+  8c:	2f020520 	svccs	0x00020520
+  90:	05200c05 	streq	r0, [r0, #-3077]!	; 0xfffff3fb
+  94:	0b052f02 	bleq	14bca4 <startup-0x1feb435c>
+  98:	2f020520 	svccs	0x00020520
+  9c:	05200c05 	streq	r0, [r0, #-3077]!	; 0xfffff3fb
+  a0:	0a052f07 	beq	14bcc4 <startup-0x1feb433c>
   a4:	01040200 	mrseq	r0, R12_usr
-  a8:	00170520 	andseq	r0, r7, r0, lsr #10
+  a8:	00140520 	andseq	r0, r4, r0, lsr #10
   ac:	2e010402 	cdpcs	4, 0, cr0, cr1, cr2, {0}
-  b0:	02000a05 	andeq	r0, r0, #20480	; 0x5000
+  b0:	02000705 	andeq	r0, r0, #1310720	; 0x140000
   b4:	053c0104 	ldreq	r0, [ip, #-260]!	; 0xfffffefc
-  b8:	0f052105 	svceq	0x00052105
+  b8:	0c052102 	stfeqs	f2, [r5], {2}
   bc:	2f010520 	svccs	0x00010520
-  c0:	4c0c05a1 	cfstr32mi	mvfx0, [ip], {161}	; 0xa1
-  c4:	05830b05 	streq	r0, [r3, #2821]	; 0xb05
-  c8:	09053f0a 	stmdbeq	r5, {r1, r3, r8, r9, sl, fp, ip, sp}
-  cc:	2f2f2f22 	svccs	0x002f2f22
-  d0:	052f0b05 	streq	r0, [pc, #-2821]!	; fffff5d3 <__aeabi_idiv0+0xdffff3a7>
-  d4:	3c7a030a 	ldclcc	3, cr0, [sl], #-40	; 0xffffffd8
-  d8:	5b440105 	blpl	11004f4 <startup-0x1eeffb0c>
-  dc:	054b0505 	strbeq	r0, [fp, #-1285]	; 0xfffffafb
-  e0:	054d9f01 	strbeq	r9, [sp, #-3841]	; 0xfffff0ff
-  e4:	09052f05 	stmdbeq	r5, {r0, r2, r8, r9, sl, fp, sp}
-  e8:	01040200 	mrseq	r0, R12_usr
-  ec:	00190531 	andseq	r0, r9, r1, lsr r5
-  f0:	20010402 	andcs	r0, r1, r2, lsl #8
-  f4:	02000905 	andeq	r0, r0, #81920	; 0x14000
-  f8:	002f0104 	eoreq	r0, pc, r4, lsl #2
-  fc:	59010402 	stmdbpl	r1, {r1, sl}
- 100:	02001905 	andeq	r1, r0, #81920	; 0x14000
- 104:	05200104 	streq	r0, [r0, #-260]!	; 0xfffffefc
- 108:	04020009 	streq	r0, [r2], #-9
- 10c:	19052f01 	stmdbne	r5, {r0, r8, r9, sl, fp, sp}
- 110:	01040200 	mrseq	r0, R12_usr
- 114:	00030255 	andeq	r0, r3, r5, asr r2
- 118:	Address 0x00000118 is out of bounds.
-
+  c0:	4c0605a4 	cfstr32mi	mvfx0, [r6], {164}	; 0xa4
+  c4:	05830505 	streq	r0, [r3, #1285]	; 0x505
+  c8:	09053f07 	stmdbeq	r5, {r0, r1, r2, r8, r9, sl, fp, ip, sp}
+  cc:	2f030522 	svccs	0x00030522
+  d0:	05052f2f 	streq	r2, [r5, #-3887]	; 0xfffff0d1
+  d4:	0307052f 	movweq	r0, #29999	; 0x752f
+  d8:	01053c7a 	tsteq	r5, sl, ror ip
+  dc:	02055e44 	andeq	r5, r5, #68, 28	; 0x440
+  e0:	9f01054b 	svcls	0x0001054b
+  e4:	2f050550 	svccs	0x00050550
+  e8:	02000905 	andeq	r0, r0, #81920	; 0x14000
+  ec:	05310104 	ldreq	r0, [r1, #-260]!	; 0xfffffefc
+  f0:	04020019 	streq	r0, [r2], #-25	; 0xffffffe7
+  f4:	09052001 	stmdbeq	r5, {r0, sp}
+  f8:	01040200 	mrseq	r0, R12_usr
+  fc:	0402002f 	streq	r0, [r2], #-47	; 0xffffffd1
+ 100:	19055901 	stmdbne	r5, {r0, r8, fp, ip, lr}
+ 104:	01040200 	mrseq	r0, R12_usr
+ 108:	00090520 	andeq	r0, r9, r0, lsr #10
+ 10c:	2f010402 	svccs	0x00010402
+ 110:	02001905 	andeq	r1, r0, #81920	; 0x14000
+ 114:	02550104 	subseq	r0, r5, #4, 2
+ 118:	01010003 	tsteq	r1, r3
 
 Disassembly of section .debug_str:
 

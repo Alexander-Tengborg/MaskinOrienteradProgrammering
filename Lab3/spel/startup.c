@@ -119,7 +119,6 @@ int main(void)
     graphic_initalize();
     graphic_clear_screen();
     victim->set_speed(victim, 4, 1);
-
     while( 1 )
     {
         victim->move(victim);
@@ -135,14 +134,14 @@ int main(void)
             default: creature->set_speed(creature, 0, 0); break;
         }
      
-         if(objects_overlap(victim, creature) || is_outside(creature))
-         {
+        if(objects_overlap(victim, creature) || is_outside(creature))
+        {
             // Game over
             break;
-         }
+        }
          
-         delay_milli(20);
-     }
+        delay_milli(20);
+    }
 }
 
 

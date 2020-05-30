@@ -94,7 +94,6 @@ void main(void)
 	init_app();   
 	graphic_initalize();
 	graphic_clear_screen();
-   
 	while(1)
 	{
 		p->move(p);

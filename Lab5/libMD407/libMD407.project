@@ -24,7 +24,6 @@
     <File Name="general.c"/>
     <File Name="asciidisplay_driver.c"/>
     <File Name="keypad_driver.c"/>
-    <File Name="libMD407.c"/>
   </VirtualDirectory>
   <VirtualDirectory Name="include">
     <File Name="libMD407.h"/>
@@ -60,7 +59,8 @@ ARM_M4FPLIB=@(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/h
       </Debugger>
       <PreBuild/>
       <PostBuild>
-        <Command Enabled="yes"/>
+        <Command Enabled="yes">cp $(IntermediateDirectory)/$(ProjectName)d.a \
+$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v6-m/libmd407d.a</Command>
       </PostBuild>
       <CustomBuild Enabled="no">
         <RebuildCommand/>

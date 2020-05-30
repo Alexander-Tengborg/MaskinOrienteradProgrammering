@@ -4,28 +4,27 @@
  */
  
 /* Defintioner*/
- 
 #define     GPIO_D              0x40020C00
 #define     GPIO_D_MODER        ((volatile unsigned int *) GPIO_D)
- 
+
 #define     GPIO_D_OTYPER       ((volatile unsigned short *) GPIO_D+0x04)
 #define     GPIO_D_OTYPER_LOW   ((volatile unsigned char *) GPIO_D+0x04)
 #define     GPIO_D_OTYPER_HIGH  ((volatile unsigned char *) GPIO_D+0x05)
- 
+
 #define     GPIO_D_PUPDR        ((volatile unsigned long *) GPIO_D+0x0C)
 #define     GPIO_D_PUPDR_LOW    ((volatile unsigned short *) GPIO_D+0x0C)
 #define     GPIO_D_PUPDR_HIGH   ((volatile unsigned short *) GPIO_D+0x0E)
- 
+
 #define     GPIO_D_IDR          ((volatile unsigned short *) GPIO_D+0x10)
 #define     GPIO_D_IDR_LOW      ((volatile unsigned char *) GPIO_D+0x10)
 #define     GPIO_D_IDR_HIGH     ((volatile unsigned char *) GPIO_D+0x11)
- 
+
 #define     GPIO_D_ODR          ((volatile unsigned short *) GPIO_D+0x14)
 #define     GPIO_D_ODR_LOW      ((volatile unsigned char *) GPIO_D+0x14)
 #define     GPIO_D_ODR_HIGH     ((volatile unsigned char *) GPIO_D+0x15)
  
 const unsigned char segs[] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x67,0x77,0x7C,0x39,0x5E,0x79,0x71};
- 
+
 __attribute__((naked)) __attribute__((section (".start_section")) )
 void startup ( void )
 {
@@ -34,7 +33,7 @@ __asm__ volatile(" MOV SP,R0\n");
 __asm__ volatile(" BL main\n");                 /* call main */
 __asm__ volatile(".L1: B .L1\n");                   /* never return */
 }
- 
+
 /*
  * Konfigurerar port D så att den kan användas med en keypad på bitar 0-7, 
  * samt så att en 7-segment display kan användas på bitar 8-15
@@ -78,8 +77,7 @@ unsigned char getColumn(void)
  * Används för att returna den knappen som är nertryckt
  */
 unsigned char keyb(void) {
-   unsigned char key[] = {1,2,3,0xA,4,5,6,0xB,7,8,9,0xC,0xE,0,0xF,0xD};
-                           
+    unsigned char key[] = {1,2,3,0xA,4,5,6,0xB,7,8,9,0xC,0xE,0,0xF,0xD};                           
     for (unsigned char row = 1; row <= 4; row++) {
         activateRow(row);
         unsigned char col = getColumn();

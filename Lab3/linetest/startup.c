@@ -36,7 +36,7 @@ void swap(short *x, short *y);
 int can_plot_line(LINE l);
 int draw_line(LINE l);
 
-LINE lines[]={
+LINE lines[] = {
 	{40,10, 100,10},
 	{40,10, 100,20},
 	{40,10, 100,30},
@@ -58,7 +58,7 @@ void main(void)
   
 	while( 1 )
 	{
-		for( int i = 0; i< sizeof(lines)/sizeof(LINE); i++)
+		for( int i = 0; i < sizeof(lines)/sizeof(LINE); i++)
 		{
 			draw_line(lines[i]);
 			delay_milli(50);

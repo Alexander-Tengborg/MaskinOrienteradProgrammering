@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="Lab2" Database="" Version="10.0.0">
   <Project Name="delay" Path="delay/delay.project" Active="No"/>
-  <Project Name="keypad" Path="keypad/keypad.project" Active="Yes"/>
-  <Project Name="asciidisplay" Path="asciidisplay/asciidisplay.project" Active="No"/>
+  <Project Name="keypad" Path="keypad/keypad.project" Active="No"/>
+  <Project Name="asciidisplay" Path="asciidisplay/asciidisplay.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>

@@ -1,29 +1,33 @@
 [{
-  "file": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\libMD407.c",
-  "directory": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407",
-  "command": "clang  -c C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\libMD407.c -o C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\libMD407.c.o  -I. -I.  -g  -O0  -mthumb -march=armv6-m -msoft-float -mfloat-abi=soft  -W  -std=c99"
+  "file": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\lib_test\\startup.c",
+  "directory": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\lib_test",
+  "command": "clang  -c D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\lib_test\\startup.c -o D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\lib_test\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
  }, {
-  "file": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\asciidisplay_driver.c",
-  "directory": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407",
-  "command": "clang  -c C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\asciidisplay_driver.c -o C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\asciidisplay_driver.c.o  -I. -I.  -g  -O0  -mthumb -march=armv6-m -msoft-float -mfloat-abi=soft  -W  -std=c99"
+  "file": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\usart_test\\startup.c",
+  "directory": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\usart_test",
+  "command": "clang  -c D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\usart_test\\startup.c -o D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\usart_test\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
  }, {
-  "file": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\libMD407.h",
-  "directory": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407",
-  "command": "clang  -c C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\libMD407.h -o C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\libMD407.h.o  -I. -I.  -g  -O0  -W"
+  "file": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\breakout\\startup.c",
+  "directory": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\breakout",
+  "command": "clang  -c D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\breakout\\startup.c -o D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\breakout\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
  }, {
-  "file": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\keypad_driver.c",
-  "directory": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407",
-  "command": "clang  -c C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\keypad_driver.c -o C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\keypad_driver.c.o  -I. -I.  -g  -O0  -mthumb -march=armv6-m -msoft-float -mfloat-abi=soft  -W  -std=c99"
+  "file": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\asciidisplay_driver.c",
+  "directory": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407",
+  "command": "clang  -c D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\asciidisplay_driver.c -o D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\asciidisplay_driver.c.o  -I. -I.  -g  -O0  -mthumb -march=armv6-m -msoft-float -mfloat-abi=soft  -W  -std=c99"
  }, {
-  "file": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\usart_driver.c",
-  "directory": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407",
-  "command": "clang  -c C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\usart_driver.c -o C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\usart_driver.c.o  -I. -I.  -g  -O0  -mthumb -march=armv6-m -msoft-float -mfloat-abi=soft  -W  -std=c99"
+  "file": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\usart_driver.c",
+  "directory": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407",
+  "command": "clang  -c D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\usart_driver.c -o D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\usart_driver.c.o  -I. -I.  -g  -O0  -mthumb -march=armv6-m -msoft-float -mfloat-abi=soft  -W  -std=c99"
  }, {
-  "file": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\general.c",
-  "directory": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407",
-  "command": "clang  -c C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\general.c -o C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\general.c.o  -I. -I.  -g  -O0  -mthumb -march=armv6-m -msoft-float -mfloat-abi=soft  -W  -std=c99"
+  "file": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\libMD407.h",
+  "directory": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407",
+  "command": "clang  -c D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\libMD407.h -o D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\libMD407.h.o  -I. -I.  -g  -O0  -W"
  }, {
-  "file": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\breakout\\startup.c",
-  "directory": "C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\breakout",
-  "command": "clang  -c C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\breakout\\startup.c -o C:\\Users\\usr\\Documents\\GitHub\\MaskinOrienteradProgrammering\\Lab5\\breakout\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+  "file": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\keypad_driver.c",
+  "directory": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407",
+  "command": "clang  -c D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\keypad_driver.c -o D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\keypad_driver.c.o  -I. -I.  -g  -O0  -mthumb -march=armv6-m -msoft-float -mfloat-abi=soft  -W  -std=c99"
+ }, {
+  "file": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\general.c",
+  "directory": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407",
+  "command": "clang  -c D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\general.c -o D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\libMD407\\general.c.o  -I. -I.  -g  -O0  -mthumb -march=armv6-m -msoft-float -mfloat-abi=soft  -W  -std=c99"
  }]

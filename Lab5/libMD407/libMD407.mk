@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=libMD407
 ConfigurationName      :=Debug
-WorkspacePath          :=C:/Users/usr/Documents/GitHub/MaskinOrienteradProgrammering/Lab5
-ProjectPath            :=C:/Users/usr/Documents/GitHub/MaskinOrienteradProgrammering/Lab5/libMD407
+WorkspacePath          :=D:/KURSER/MaskinOrienteradProgrammering/Lab5
+ProjectPath            :=D:/KURSER/MaskinOrienteradProgrammering/Lab5/libMD407
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=Alexander
-Date                   :=22/05/2020
+User                   :=Landa
+Date                   :=30/05/2020
 CodeLitePath           :=C:/cseapp/CodeLite
 LinkerName             :=$(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-g++.exe
 SharedObjectLinkerName :=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi-g++.exe -shared -fPIC
@@ -61,10 +61,9 @@ AS       := $(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-as.exe
 ##
 ## User defined environment variables
 ##
-CodeLiteDir:=C:\cseapp\CodeLite
 ARM_V6LIB:=@(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v6-m
 ARM_M4FPLIB:=@(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard
-Objects0=$(IntermediateDirectory)/usart_driver.c$(ObjectSuffix) $(IntermediateDirectory)/general.c$(ObjectSuffix) $(IntermediateDirectory)/asciidisplay_driver.c$(ObjectSuffix) $(IntermediateDirectory)/keypad_driver.c$(ObjectSuffix) $(IntermediateDirectory)/libMD407.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/asciidisplay_driver.c$(ObjectSuffix) $(IntermediateDirectory)/usart_driver.c$(ObjectSuffix) $(IntermediateDirectory)/keypad_driver.c$(ObjectSuffix) $(IntermediateDirectory)/general.c$(ObjectSuffix) 
 
 
 
@@ -81,12 +80,13 @@ $(OutputFile): $(Objects)
 	@echo "" > $(IntermediateDirectory)/.d
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(AR) $(ArchiveOutputSwitch)$(OutputFile) @$(ObjectsFileList) $(ArLibs)
-	@$(MakeDirCommand) "C:\Users\usr\Documents\GitHub\MaskinOrienteradProgrammering\Lab5/.build-debug"
-	@echo rebuilt > "C:\Users\usr\Documents\GitHub\MaskinOrienteradProgrammering\Lab5/.build-debug/libMD407"
+	@$(MakeDirCommand) "D:\KURSER\MaskinOrienteradProgrammering\Lab5/.build-debug"
+	@echo rebuilt > "D:\KURSER\MaskinOrienteradProgrammering\Lab5/.build-debug/libMD407"
 
 PostBuild:
 	@echo Executing Post Build commands ...
-	
+	cp ./Debug/libMD407d.a \
+C:\cseapp\CodeLite/tools/gcc-arm/arm-none-eabi/lib/thumb/v6-m/libmd407d.a
 	@echo Done
 
 MakeIntermediateDirs:
@@ -102,45 +102,37 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/usart_driver.c$(ObjectSuffix): usart_driver.c $(IntermediateDirectory)/usart_driver.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/usr/Documents/GitHub/MaskinOrienteradProgrammering/Lab5/libMD407/usart_driver.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/usart_driver.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/usart_driver.c$(DependSuffix): usart_driver.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/usart_driver.c$(ObjectSuffix) -MF$(IntermediateDirectory)/usart_driver.c$(DependSuffix) -MM usart_driver.c
-
-$(IntermediateDirectory)/usart_driver.c$(PreprocessSuffix): usart_driver.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/usart_driver.c$(PreprocessSuffix) usart_driver.c
-
-$(IntermediateDirectory)/general.c$(ObjectSuffix): general.c $(IntermediateDirectory)/general.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/usr/Documents/GitHub/MaskinOrienteradProgrammering/Lab5/libMD407/general.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/general.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/general.c$(DependSuffix): general.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/general.c$(ObjectSuffix) -MF$(IntermediateDirectory)/general.c$(DependSuffix) -MM general.c
-
-$(IntermediateDirectory)/general.c$(PreprocessSuffix): general.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/general.c$(PreprocessSuffix) general.c
-
 $(IntermediateDirectory)/asciidisplay_driver.c$(ObjectSuffix): asciidisplay_driver.c $(IntermediateDirectory)/asciidisplay_driver.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/usr/Documents/GitHub/MaskinOrienteradProgrammering/Lab5/libMD407/asciidisplay_driver.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/asciidisplay_driver.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "D:/KURSER/MaskinOrienteradProgrammering/Lab5/libMD407/asciidisplay_driver.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/asciidisplay_driver.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/asciidisplay_driver.c$(DependSuffix): asciidisplay_driver.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/asciidisplay_driver.c$(ObjectSuffix) -MF$(IntermediateDirectory)/asciidisplay_driver.c$(DependSuffix) -MM asciidisplay_driver.c
 
 $(IntermediateDirectory)/asciidisplay_driver.c$(PreprocessSuffix): asciidisplay_driver.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/asciidisplay_driver.c$(PreprocessSuffix) asciidisplay_driver.c
 
+$(IntermediateDirectory)/usart_driver.c$(ObjectSuffix): usart_driver.c $(IntermediateDirectory)/usart_driver.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "D:/KURSER/MaskinOrienteradProgrammering/Lab5/libMD407/usart_driver.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/usart_driver.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/usart_driver.c$(DependSuffix): usart_driver.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/usart_driver.c$(ObjectSuffix) -MF$(IntermediateDirectory)/usart_driver.c$(DependSuffix) -MM usart_driver.c
+
+$(IntermediateDirectory)/usart_driver.c$(PreprocessSuffix): usart_driver.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/usart_driver.c$(PreprocessSuffix) usart_driver.c
+
 $(IntermediateDirectory)/keypad_driver.c$(ObjectSuffix): keypad_driver.c $(IntermediateDirectory)/keypad_driver.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/usr/Documents/GitHub/MaskinOrienteradProgrammering/Lab5/libMD407/keypad_driver.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/keypad_driver.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "D:/KURSER/MaskinOrienteradProgrammering/Lab5/libMD407/keypad_driver.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/keypad_driver.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/keypad_driver.c$(DependSuffix): keypad_driver.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/keypad_driver.c$(ObjectSuffix) -MF$(IntermediateDirectory)/keypad_driver.c$(DependSuffix) -MM keypad_driver.c
 
 $(IntermediateDirectory)/keypad_driver.c$(PreprocessSuffix): keypad_driver.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/keypad_driver.c$(PreprocessSuffix) keypad_driver.c
 
-$(IntermediateDirectory)/libMD407.c$(ObjectSuffix): libMD407.c $(IntermediateDirectory)/libMD407.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/usr/Documents/GitHub/MaskinOrienteradProgrammering/Lab5/libMD407/libMD407.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/libMD407.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/libMD407.c$(DependSuffix): libMD407.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/libMD407.c$(ObjectSuffix) -MF$(IntermediateDirectory)/libMD407.c$(DependSuffix) -MM libMD407.c
+$(IntermediateDirectory)/general.c$(ObjectSuffix): general.c $(IntermediateDirectory)/general.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "D:/KURSER/MaskinOrienteradProgrammering/Lab5/libMD407/general.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/general.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/general.c$(DependSuffix): general.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/general.c$(ObjectSuffix) -MF$(IntermediateDirectory)/general.c$(DependSuffix) -MM general.c
 
-$(IntermediateDirectory)/libMD407.c$(PreprocessSuffix): libMD407.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/libMD407.c$(PreprocessSuffix) libMD407.c
+$(IntermediateDirectory)/general.c$(PreprocessSuffix): general.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/general.c$(PreprocessSuffix) general.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
