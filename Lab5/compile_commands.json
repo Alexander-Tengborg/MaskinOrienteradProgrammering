@@ -1,4 +1,8 @@
 [{
+  "file": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\snake\\startup.c",
+  "directory": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\snake",
+  "command": "clang  -c D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\snake\\startup.c -o D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\snake\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"
+ }, {
   "file": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\lib_test\\startup.c",
   "directory": "D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\lib_test",
   "command": "clang  -c D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\lib_test\\startup.c -o D:\\KURSER\\MaskinOrienteradProgrammering\\Lab5\\lib_test\\startup.c.o  -I. -I.  -g  -O0  -w  -mthumb -march=armv6-m  -mfloat-abi=soft  -std=c99"

@@ -6,9 +6,6 @@
 #include <errno.h>
 #include <sys/stat.h>
 
-/* Type definitions */
-#include <sys/stat.h>
-
 typedef struct
 {
 	char name[16];

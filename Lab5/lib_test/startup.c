@@ -20,12 +20,14 @@ __asm__ volatile(" .globl _exit\n");
 
 void main(void)
 {
-	char c;
+	//KEYPAD READ TEST
+	/*char c;
 	while(1)
 	{
-		c = getc(KEYPAD);
+		c = _read(KEYPAD,0,1);
 		putc(c,stdout);
-	}
+	}*/
+	// KEYPAD READ TEST END
 
 	//GETC STDIN PUTCHAR STDOUT TEST
 	/*char c;
@@ -53,30 +55,6 @@ void main(void)
 	dprintf(4,"Hello World\n"); //Skriva till ASCII //byt 4 till ASCIIDISPLAY
 	
 	printf("Hello World\n"); //Skriva till USART
-	*/
-	
-	/*char str[20];
-	
-	printf("Enter name: ");
-	//scanf("%s", str);
-	gets(str);
-	
-	printf("Entered Name: %s\n", str);*/
-	
-	//Läsa från USART
-	
-		//Läsa från KEYPAD
-	
-	/*char buffer[256];
-	printf("getline test");
-	fflush(stdout);
-	while(1)
-	{
-		getline(buffer, 256);
-		fflush(stdin);
-		
-		printf("\n%s",buffer);
-		fflush(stdout);
-	}*/
+	*/	
 }
 
