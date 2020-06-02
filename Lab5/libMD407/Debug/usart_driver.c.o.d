@@ -1,3 +1,3 @@
-Debug/usart_driver.c.o: usart_driver.c libMD407.h
+Debug/usart_driver.c.o: usart_driver.c libmd407.h
 
-libMD407.h:
+libmd407.h:

@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Landa
-Date                   :=30/05/2020
+Date                   :=02/06/2020
 CodeLitePath           :=C:/cseapp/CodeLite
 LinkerName             :=$(CodeLiteDir)/tools/gcc-arm/bin/arm-none-eabi-g++.exe
 SharedObjectLinkerName :=$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi-g++.exe -shared -fPIC
@@ -43,7 +43,7 @@ IncludePCH             :=
 RcIncludePath          := 
 Libs                   := $(LibrarySwitch)gcc $(LibrarySwitch)md407d $(LibrarySwitch)c_nano 
 ArLibs                 :=  "gcc" "md407d" "c_nano" 
-LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)C:\cseapp\CodeLite\tools\gcc-arm\arm-none-eabi\lib\thumb\v6-m 
+LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v6-m/ 
 
 ##
 ## Common variables

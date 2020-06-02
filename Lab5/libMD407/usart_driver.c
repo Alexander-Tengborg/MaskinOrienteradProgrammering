@@ -131,5 +131,3 @@ static int usart_read(char *ptr, int len)
 	}
 	return todo - 1;
 } 
-
-

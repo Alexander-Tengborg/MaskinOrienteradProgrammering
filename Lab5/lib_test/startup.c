@@ -2,7 +2,6 @@
  * 	startup.c
  *
  */
-
 #include <stdio.h>
 #include <libMD407.h>
 
@@ -20,26 +19,25 @@ __asm__ volatile(" .globl _exit\n");
 
 void main(void)
 {
-	//KEYPAD READ TEST
-	/*char c;
+	//Läsning från KEYPAD
+	char c;
 	while(1)
 	{
 		c = _read(KEYPAD,0,1);
-		putc(c,stdout);
-	}*/
+		printf("%d\n",c);
+	}
 	// KEYPAD READ TEST END
 
-	//GETC STDIN PUTCHAR STDOUT TEST
+	//Läsning/Skrivning till USART
 	/*char c;
 	while(1)
 	{
 		c = getc(stdin);
 		putchar(c);
 	}*/
-	//GETC STDIN PUTCHAR STDOUT TEST END
-	
-	//MALLOC & FREE TEST
-	/*int *p;
+
+	//Malloc och Free
+	int *p;
 
 	p = (int *)malloc(sizeof(int));
 	if (p == 0)
@@ -50,11 +48,14 @@ void main(void)
 	*p = 5;
 	printf("%d\n", *p);
 	free(p);
-	//MALLOC & FREE TEST END
 
-	dprintf(4,"Hello World\n"); //Skriva till ASCII //byt 4 till ASCIIDISPLAY
-	
-	printf("Hello World\n"); //Skriva till USART
-	*/	
+
+	//Skriva till ASCII 
+	dprintf(ASCIIDISPLAY,"Hello World");
+
+
+	//Skriva till USART
+	printf("Hello World\n");
+		
 }
 

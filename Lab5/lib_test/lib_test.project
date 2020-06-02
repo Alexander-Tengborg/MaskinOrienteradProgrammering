@@ -40,7 +40,7 @@
         <IncludePath Value="."/>
       </Compiler>
       <Linker Options="-T$(ProjectPath)/md407-ram.x;-L$(ARM_V6LIB) -L$(ARM_GCC_V6LIB);-nostartfiles" Required="yes">
-        <LibraryPath Value="C:\cseapp\CodeLite\tools\gcc-arm\arm-none-eabi\lib\thumb\v6-m"/>
+        <LibraryPath Value="$(CodeLiteDir)/tools/gcc-arm/arm-none-eabi/lib/thumb/v6-m/"/>
         <Library Value="gcc"/>
         <Library Value="md407d"/>
         <Library Value="c_nano"/>
